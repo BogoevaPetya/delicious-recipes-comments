@@ -1,22 +1,24 @@
 package com.softuni.delicious_recipes_comments.model.dto;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class AddCommentDTO {
-    private Long id;
+    @Size(min = 3, max = 30)
+    @NotNull
     private String authorName;
+    @Size(min = 5)
+    @NotNull
     private String comment;
+    @Min(1)
+    @Max(5)
+    @NotNull
     private int rate;
 
     public AddCommentDTO() {}
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getAuthorName() {
         return authorName;
