@@ -19,21 +19,21 @@ public class CommentController {
 
     @GetMapping
     public ResponseEntity<List<CommentDTO>> getAllComments(){
-        return ResponseEntity.ok(commentService.getAllOffers());
+        return ResponseEntity.ok(commentService.getAllComments());
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<CommentDTO> addComment(@RequestBody AddCommentDTO addCommentDTO){
         commentService.addComment(addCommentDTO);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<CommentDTO> getCommentById(@PathVariable("id") Long id){
-        return ResponseEntity.ok(commentService.findCommentById(id));
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<CommentDTO> getCommentById(@PathVariable("id") Long id){
+//        return ResponseEntity.ok(commentService.findCommentById(id));
+//    }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<CommentDTO> deleteById(@PathVariable("id") Long id){
         commentService.deleteComment(id);
         return ResponseEntity.ok().build();

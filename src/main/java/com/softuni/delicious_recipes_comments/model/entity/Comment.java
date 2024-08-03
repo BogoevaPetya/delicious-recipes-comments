@@ -2,6 +2,8 @@ package com.softuni.delicious_recipes_comments.model.entity;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
+
 @Entity
 @Table(name = "comments")
 public class Comment{
@@ -18,7 +20,17 @@ public class Comment{
     @Column(nullable = false)
     private int rate;
 
+    private Instant created = Instant.now();
+
     public Comment() {
+    }
+
+    public Instant getCreated() {
+        return created;
+    }
+
+    public void setCreated(Instant created) {
+        this.created = created;
     }
 
     public Long getId() {

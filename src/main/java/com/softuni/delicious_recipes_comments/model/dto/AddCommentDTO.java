@@ -1,6 +1,5 @@
 package com.softuni.delicious_recipes_comments.model.dto;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;

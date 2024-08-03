@@ -28,6 +28,6 @@ server:
     port: 8081
 
 comments:
-    api:
-        baseUrl: "http://localhost:8081"
+    retention:
+        period: P365D
 
